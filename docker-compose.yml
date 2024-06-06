@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  sleek-airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Nombre del archivo Dockerfile
+    image: tpdeombroni:latest
+
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./airflow.cfg:/opt/airflow/airflow.cfg
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False  # Evita cargar DAGs de prueba
+
+    command: airflow standalone
