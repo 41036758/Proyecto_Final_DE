@@ -20,7 +20,7 @@ El proyecto se estructura en varias partes clave:
 
   1. Dockerfile y Docker Compose:
       * Se utiliza un Dockerfile para crear un contenedor ligero para Airflow.
-      * Se usa Docker Compose para ejecutar Airflow en un entorno local, incluyendo el comando airflow standalone dentro de un servicio específico en el archivo Docker Compose.
+      * Se usa Docker Compose para ejecutar Airflow en un entorno local, mediante el comando airflow standalone que levanta los servicios necesarios.
   
   2. Apache Airflow DAG:
       * Se crea un DAG llamado 'DAG_Colectivos_CABA' que contiene las tareas de extracción, transformación, carga y notificación por correo electrónico.
